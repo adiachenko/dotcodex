@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Tests"
+  short_description: "Design readable, behavior-focused tests"
+  default_prompt: "Use $design-tests to design or review maintainable behavior-focused tests."

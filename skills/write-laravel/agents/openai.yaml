@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Laravel"
+  short_description: "Apply reusable Laravel and PHP conventions"
+  default_prompt: "Use $write-laravel to implement this Laravel change consistently."

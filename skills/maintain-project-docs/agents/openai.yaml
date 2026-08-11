@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Project Docs"
+  short_description: "Keep project documentation scoped and current"
+  default_prompt: "Use $maintain-project-docs to review whether this code change needs documentation updates."

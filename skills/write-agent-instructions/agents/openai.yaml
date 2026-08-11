@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Agent Instructions"
+  short_description: "Draft lean, durable AI steering text"
+  default_prompt: "Use $write-agent-instructions to tighten this prompt, skill, or AGENTS.md rule."

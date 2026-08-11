@@ -1,0 +1,50 @@
+---
+name: write-code
+description: Use when writing or reviewing code, including tests. Do not use for planning, explaining, or diagnosing unless the task also changes the implementation. Also use when the user says "unweave" or asks to simplify an existing implementation.
+---
+
+# Write Code
+
+## Restraint in Implementation
+
+Reason broadly while planning, including material risks and edge cases; apply this restraint only to implementation.
+
+**Prefer the smallest clear implementation that is correct for supported, realistic use.** Treat defensive machinery as overengineering when it rechecks a guarantee already established by earlier code, protects internal code from unsupported use, or makes no difference to required behavior.
+
+Make one part of the code responsible for ensuring each guarantee is true. Check external or otherwise untrusted data when it first enters that part, then let later code rely on the guarantee instead of checking it again. Add a guard or other special handling only when supported behavior requires an outcome different from what would happen without it.
+
+Apply the same restraint to structure: keep a class, interface, or layer of indirection only when it is needed to preserve supported behavior, isolates an actual boundary, satisfies a required property, or makes the implementation clearer than the direct alternative.
+
+**Before finalizing, remove defensive code** that neither performs the initial validation of untrusted input nor implements required behavior, together with tests that exist only for that code.
+
+## Unweave
+
+When the user invokes unweave or asks to simplify an existing implementation: establish supported behavior and authoritative constraints from the request, documentation, recorded agreements and specifications, tests, and actual uses — do not infer a contract from the current code shape. Within the requested scope, choose the simplest clear design that satisfies them, preferring deletion, inlining, merging, or a fitting existing convention over replacement machinery; the pass is complete only when everything remaining in scope passes the structural restraint test above. Do not merge readable methods merely to reduce indirection or method count, and do not split a cohesive class to satisfy formal SRP doctrine. Verify the result against that behavior and every affected constraint; revise or remove tests whose assertions encode only discarded implementation details or invented behavior.
+
+## Control Flow
+
+- Prefer guard clauses and straight-line control flow; keep nesting shallow.
+- Use separate operations instead of boolean parameters that select distinct behaviors.
+
+## Method Complexity
+
+Methods should have one cohesive purpose and operate at a consistent level of abstraction. A method's body should read in the vocabulary of that purpose. Extract a cohesive part when its implementation requires the reader to change context or reason at a different level than the surrounding method, even if the method is short or the extracted method is used once. Name extracted methods for the role, outcome, or guarantee they contribute to their caller.
+
+Treat ~20 lines of logic as a review signal, not a threshold: shorter methods may still mix purposes or abstraction levels.
+
+**Other signs a method may mix abstraction levels:**
+
+- Nested closures or callbacks with their own branching
+- Multiple try/catch blocks or catch-and-retry patterns
+- Representation, protocol, or data-transformation details mixed with higher-level policy or orchestration
+
+## PHP
+
+- Do not declare a PHP class `final` unless it was already `final` before the edit.
+- Inline single-use locals when the resulting expression remains clear.
+- Call global PHP functions directly; do not import them with `use function`.
+- Use docblocks only when they add information native PHP declarations cannot express.
+- Treat acronyms as words (`HttpClient`, not `HTTPClient`). When comparable identifiers in the relevant source code consistently use another casing, follow that local convention.
+- Use `readonly` only where preventing reassignment is a design requirement; when that requirement applies to every property of a DTO, prefer a `readonly` class.
+- Add type declarations to project-owned or package-owned code wherever compatible with PHP and framework contracts and conventions.
+- Prefer string interpolation to `sprintf()` and concatenation. Omit braces around interpolated variables unless required.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Control macOS Apps"
+  short_description: "Choose reliable control paths for macOS apps"
+  default_prompt: "Use $control-macos-apps to choose and use an appropriate control surface for a local macOS app."

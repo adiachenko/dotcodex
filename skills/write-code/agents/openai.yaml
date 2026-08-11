@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Code"
+  short_description: "Write clear, restrained, cohesive code"
+  default_prompt: "Use $write-code to implement this change with a clear, restrained design."

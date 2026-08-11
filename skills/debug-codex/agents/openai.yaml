@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debug Codex"
+  short_description: "Trace Codex behavior through source and runtime"
+  default_prompt: "Use $debug-codex to investigate this Codex behavior against the installed client and current source."

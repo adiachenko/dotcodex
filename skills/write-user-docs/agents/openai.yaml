@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write User Docs"
+  short_description: "Write focused, task-oriented user documentation"
+  default_prompt: "Use $write-user-docs to draft task-oriented end-user documentation."

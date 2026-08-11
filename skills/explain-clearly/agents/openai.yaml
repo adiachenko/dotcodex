@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain Clearly"
+  short_description: "Clear explanatory chat answers"
+  default_prompt: "Use $explain-clearly to explain this code or design question clearly."
