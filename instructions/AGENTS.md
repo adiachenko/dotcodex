@@ -16,7 +16,7 @@ Use a fresh spawn (`fork_turns = "none"`) for an independent review or challenge
 
 When the user asks to “crucible” something, treat it as a request to subject the proposed solution to independent review.
 
-# Encharge
+## Encharge
 
 When the user asks to “encharge” a task, create a separate user-owned Codex thread with the objective and relevant context needed to act independently. Confirm that it has started, then return without waiting for completion.
 
