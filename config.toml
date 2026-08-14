@@ -19,3 +19,12 @@ default_subagent_model = "gpt-5.6-sol"
 default_subagent_reasoning_effort = "high"
 max_threads = 10
 max_depth = 1
+
+[desktop]
+ambient-suggestions-enabled = false
+followUpQueueMode = "steer"
+git-branch-prefix = ""
+git-pull-request-merge-method = "squash"
+git-create-pull-request-as-draft = false
+git-commit-instructions = "Write the commit title as a short imperative phrase. Leave the commit description empty."
+git-pr-instructions = "Write the PR title as a short imperative phrase naming the main change. Leave the PR description empty."
