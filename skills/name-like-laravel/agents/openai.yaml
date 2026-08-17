@@ -1,4 +1,0 @@
-interface:
-  display_name: "Name Like Laravel"
-  short_description: "Choose expressive, Laravel-style code names"
-  default_prompt: "Use $name-like-laravel to choose expressive, idiomatic names for this PHP/Laravel code."

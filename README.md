@@ -18,7 +18,7 @@ These projects are also part of this setup but live in dedicated repositories:
 
 - ⛳️ [Questline](https://github.com/adiachenko/questline) provides a workflow for developing software one bounded, reviewable deliverable at a time.
 - 🪏 [Knotbane](https://github.com/adiachenko/knotbane) finds and simplifies cyclomatic complexity hotspots in PHP code.
-- I also have agent-ready Laravel starters for [applications](https://github.com/adiachenko/starter-kit-laravel) and [packages](https://github.com/adiachenko/skeleton-laravel).
+- I also have agent-ready Laravel starters for [applications](https://github.com/adiachenko/starter-laravel-app) and [packages](https://github.com/adiachenko/starter-laravel-package).
 
 ## Automatic skill invocation
 
