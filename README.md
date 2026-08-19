@@ -4,7 +4,7 @@ My Codex setup, just the coding parts.
 
 ## Contents
 
-- `instructions/SYSTEM.custom.md` is the system prompt I use to customize model behavior. The default prompt casts Codex as an eager-to-please old friend. Most of my changes make that friend think before nodding along and keep it from inventing a framework whenever a screwdriver would do.
+- `instructions/SYSTEM.custom.md` is the system prompt I use to customize model behavior. The default prompt casts Codex as an eager-to-please old friend. Most of my changes make that friend think through what each choice buys against what it costs, then use the simplest approach that works.
 - `instructions/SYSTEM.default.md` is included as a baseline for comparison. [View the system prompt changes](#view-the-system-prompt-changes).
 - `instructions/AGENTS.md` is for more personalized rules and gotchas. The "**User Memory**" it references is not included because it contains personal context, and it's unrelated to coding anyway. I curate memories manually so I can decide exactly what is retained and loaded into context.
 - `skills/` contains only the skills I use for coding and related work.

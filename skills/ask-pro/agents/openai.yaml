@@ -1,4 +1,0 @@
-interface:
-  display_name: "Ask Pro"
-  short_description: "User-requested second opinion from ChatGPT Pro"
-  default_prompt: "Use $ask-pro through Chrome to get a second opinion from ChatGPT Pro on this task."
