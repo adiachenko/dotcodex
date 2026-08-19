@@ -7,9 +7,9 @@ description: Use when writing or reviewing code, including tests. Do not use for
 
 ## Restraint in Implementation
 
-Reason broadly while planning, including material risks and edge cases; apply this restraint only to implementation.
+Reason broadly while planning, including material risks and edge cases. Apply this restraint only to implementation.
 
-**Prefer the smallest clear implementation that is correct for supported, realistic use.** Treat defensive machinery as overengineering when it rechecks a guarantee already established by earlier code, protects internal code from unsupported use, or makes no difference to required behavior.
+**Prefer the smallest clear implementation that is correct for supported, realistic use.** Treat defensive code as overengineering when it rechecks a guarantee already established by earlier code, protects internal code from unsupported use, or makes no difference to required behavior.
 
 Make one part of the code responsible for ensuring each guarantee is true. Check external or otherwise untrusted data when it first enters that part, then let later code rely on the guarantee instead of checking it again. Add a guard or other special handling only when supported behavior requires an outcome different from what would happen without it.
 
@@ -19,7 +19,7 @@ Apply the same restraint to structure: keep a class, interface, or layer of indi
 
 ## Unweave
 
-When the user invokes unweave or asks to simplify an existing implementation: establish supported behavior and authoritative constraints from the request, documentation, recorded agreements and specifications, tests, and actual uses — do not infer a contract from the current code shape. Within the requested scope, choose the simplest clear design that satisfies them, preferring deletion, inlining, merging, or a fitting existing convention over replacement machinery; the pass is complete only when everything remaining in scope passes the structural restraint test above. Do not merge readable methods merely to reduce indirection or method count, and do not split a cohesive class to satisfy formal SRP doctrine. Verify the result against that behavior and every affected constraint; revise or remove tests whose assertions encode only discarded implementation details or invented behavior.
+When the user invokes unweave or asks to simplify an existing implementation, establish supported behavior and authoritative constraints from the request, documentation, recorded agreements and specifications, tests, and actual uses. Do not infer a contract from how the current code is organized. Within the requested scope, choose the simplest clear design that satisfies that behavior and those constraints. Prefer deletion, inlining, merging, or a fitting existing convention over adding replacement code or structure. Finish only when everything left in scope meets the structural rules above. Do not merge readable methods merely to reduce indirection or method count. Do not split a cohesive class to satisfy a formal reading of SRP. Verify the result against the supported behavior and every affected constraint. Revise or remove tests whose assertions encode only discarded implementation details or invented behavior.
 
 ## Control Flow
 
@@ -28,7 +28,7 @@ When the user invokes unweave or asks to simplify an existing implementation: es
 
 ## Method Complexity
 
-Methods should have one cohesive purpose and operate at a consistent level of abstraction. A method's body should read in the vocabulary of that purpose. Extract a cohesive part when its implementation requires the reader to change context or reason at a different level than the surrounding method, even if the method is short or the extracted method is used once. Name extracted methods for the role, outcome, or guarantee they contribute to their caller.
+Methods should have one cohesive purpose and operate at a consistent level of abstraction. The method body should use the vocabulary of that purpose. Extract a cohesive part when its implementation requires the reader to change context or reason at a different level than the surrounding method. This applies even if the method is short or the extracted method is used once. Name extracted methods for the role, outcome, or guarantee they contribute to their caller.
 
 Treat ~20 lines of logic as a review signal, not a threshold: shorter methods may still mix purposes or abstraction levels.
 

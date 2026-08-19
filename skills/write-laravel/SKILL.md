@@ -5,27 +5,27 @@ description: Use when writing or reviewing code for a Laravel application or pac
 
 # Write Laravel
 
-Inspect the project's own guidance and neighboring code before changing or judging it. Let established project conventions own architecture, test organization, and verification commands.
+Inspect the project's own guidance and neighboring code before changing or judging it. Follow established project conventions for architecture, test organization, and verification commands.
 
 ## Class Conventions
 
-Apply these defaults when introducing a class or intentionally changing its role, shape, or name. Project guidance or a class family used consistently across the relevant area overrides them; one existing class does not establish a convention. Do not widen the task to retrofit unrelated classes.
+Apply these defaults when introducing a class or intentionally changing its purpose, structure, or name. Project guidance or a class family used consistently across the relevant area overrides them; one existing class does not establish a convention. Do not widen the task to retrofit unrelated classes.
 
-- Invokable `VerbNounController` (e.g. `StorePostController`). Avoid noun-first names like `PostController`.
-- **Events**: Tense conveys timing — progressive before (`RequestSending`), past after (`Registered`).
-- **Facades**: Singular nouns, no suffix, e.g. `Inventory`, `Geocoder`.
-- **Jobs**: Action + `Job` suffix, e.g. `CreateUserJob`, `PerformDatabaseCleanupJob`.
-- **Listeners**: Action + `Listener` suffix, e.g. `SendInvitationMailListener`.
-- **Mailables**: Noun + `Mail` suffix, e.g. `OrderConfirmationMail`.
-- **Notifications**: Past tense + `Notification` suffix, e.g. `EmployeeAccountCreatedNotification`.
+- **Controllers.** Use invokable controllers named `VerbNounController`, such as `StorePostController`. Avoid noun-first names such as `PostController`.
+- **Events.** Tense conveys timing. Use progressive before (`RequestSending`) and past tense after (`Registered`).
+- **Facades.** Use singular nouns without a suffix, such as `Inventory` or `Geocoder`.
+- **Jobs.** Use an action followed by the `Job` suffix, such as `CreateUserJob` or `PerformDatabaseCleanupJob`.
+- **Listeners.** Use an action followed by the `Listener` suffix, such as `SendInvitationMailListener`.
+- **Mailables.** Use a noun followed by the `Mail` suffix, such as `OrderConfirmationMail`.
+- **Notifications.** Use past tense followed by the `Notification` suffix, such as `EmployeeAccountCreatedNotification`.
 
 For application commands:
 
-- **Commands**: Mirror the `app:` Artisan signature, kebab-case multi-word, e.g. `app:inventory:flush-records` → `Inventory\FlushRecordsCommand`.
+- **Commands.** Mirror the `app:` Artisan signature, using kebab case for multiple words, such as `app:inventory:flush-records` → `Inventory\FlushRecordsCommand`.
 
 For package commands:
 
-- **Commands**: Mirror the Artisan signature, kebab-case multi-word, e.g. `package:flush-records` → `FlushRecordsCommand`.
+- **Commands.** Mirror the Artisan signature, using kebab case for multiple words, such as `package:flush-records` → `FlushRecordsCommand`.
 
 ## Collections
 
@@ -40,11 +40,11 @@ For package commands:
 ## Configuration
 
 - Access configuration where it is interpreted, with explicit defaults. Avoid wrappers that only relay values.
-- In multi-section configuration files, use blank lines inside the outer array and between top-level groups or multi-line sibling configurations.
-- Use Laravel-style section comments only when a top-level group needs a heading or explanation. Document behavior or constraints that are not evident from keys and defaults.
+- In multi-section configuration files, use blank lines within the outer array and between top-level groups or multi-line sibling configurations.
+- Use Laravel-style section comments only when a top-level group needs a heading or explanation. Document behavior or constraints that are not evident from the keys and defaults.
 - Use inline `env()` calls for common deployment-specific values, with defaults when safe and meaningful. Leave uncommon opt-in values at literal defaults so applications choose how to source them.
 - Make every published configuration setting's effective default explicit where it is declared. Express inherited environment defaults as complete nested `env()` fallback chains ending in a literal value.
-- For complex configuration blocks, follow how analogous Laravel framework or first-party package components read and interpret their configuration.
+- For complex configuration blocks, follow how similar Laravel framework or first-party package components read and interpret their configuration.
 - Treat configuration as trusted application input. Add validation only when supported behavior requires it, rather than merely to fail earlier or produce a friendlier error.
 
 ## Framework Boundaries

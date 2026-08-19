@@ -2,7 +2,7 @@
 
 Define only the `up` method; omit `down`, including default scaffolding.
 
-Migrations are for schema changes only. Simple data manipulations tied to those changes (adjusting data for new columns/formats) are acceptable. Never seed application data or run business logic in migrations — use dedicated one-off console commands.
+Migrations are for schema changes only. Simple data changes tied to a schema change are acceptable, including adjustments for new columns or formats. Never seed application data or run business logic in migrations. Use dedicated one-off console commands.
 
 ## Foreign Key Delete Policy
 
@@ -18,7 +18,7 @@ Use `cascadeOnDelete()` when the child is inseparable from its parent and has no
 
 ### Optional References
 
-Use `nullOnDelete()` for nullable descriptive, attribution, or non-owning references. This is the default for `*_by`, `assigned_to`, `owner_id`, `parent_id`, and `last_*_id` columns.
+Use `nullOnDelete()` for nullable descriptive, attribution, or non-owning references. Treat this as the default for `*_by`, `assigned_to`, `owner_id`, `parent_id`, and `last_*_id` columns.
 
 ### Business-Critical or Historical Records
 
