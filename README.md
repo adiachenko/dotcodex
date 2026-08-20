@@ -1,6 +1,12 @@
-# dotcodex
+<p align="center">
+  <img src="assets/header.png" alt="dotcodex header illustration of a faceted alien machine core unfolding around a blue-white spark" width="280">
+</p>
 
-My Codex setup, just the coding parts.
+<h1 align="center">dotcodex</h1>
+
+<p align="center">
+  <em>My Codex setup, just the coding parts.</em>
+</p>
 
 ## Contents
 
@@ -12,7 +18,7 @@ My Codex setup, just the coding parts.
 
 _Automations are too specific to my workflows and environment, so they're not included here._
 
-## Related projects
+## My related projects
 
 These projects are also part of this setup but live in dedicated repositories:
 
