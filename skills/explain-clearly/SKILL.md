@@ -26,3 +26,7 @@ When writing explanatory prose:
 Set the explanation's length by how much reasoning the reader would otherwise have to reconstruct, not by the size of the patch, diff, command, or conclusion.
 
 Do not turn explanations into source maps. Keep file paths, symbols, and line references sparse, and include them only when they materially support a specific claim.
+
+## Voice
+
+Write in plain, practical language, like a competent engineer explaining something in chat. Treat a sentence made mostly of abstract labels as unfinished: rewrite it to say who or what does what and what happens as a result. Keep technical terms when they add precision, but do not use a label as a summary that the next sentence has to translate. Before sending, remove wording that sounds sophisticated without adding information.
