@@ -1,6 +1,6 @@
 ---
 name: write-agent-instructions
-description: "Write, edit, review, or discuss improvements to agent instructions, including prompts, automations, skills, system prompts, `AGENTS.md`/`CLAUDE.md` rules, and other text that steers an AI agent. Use even when the user is only evaluating or drafting possible instruction wording. Also use when the user says `runefold`."
+description: "Use when the user asks to write, edit, review, evaluate, or discuss prompts, automations, skills, system prompts, `AGENTS.md`/`CLAUDE.md` rules, or other text that steers an AI agent, including when the user says `runefold`."
 ---
 
 # Write Agent Instructions
@@ -8,6 +8,10 @@ description: "Write, edit, review, or discuss improvements to agent instructions
 Every instruction should earn its place. Keep only rules whose absence would materially threaten correctness or explicit user expectations. Prefer the condition that must remain true over a procedure the agent can choose at runtime.
 
 When the user asks to "runefold" instructions, preserve their intended behavior while aggressively removing procedures and details the target agent can infer or retrieve at runtime.
+
+## Skill `description` Is a Trigger
+
+For skills, treat `description` as a badly named field: it is a routing predicate wearing a prose label. Its only job is to answer, "Should this skill load for this request?" Write it as `Use when ...` and include only the user requests, vocabulary, contextual conditions, and scope boundaries needed to answer that question. Generalize equivalent wording into one trigger instead of cataloging phrases. If a clause explains what the skill does after it loads, that clause belongs in the skill body. Configure `allow_implicit_invocation` for explicit-only skills and keep explicit invocation syntax out of descriptions.
 
 ## Process
 
@@ -23,8 +27,6 @@ When discussing proposed changes to existing instructions, reproduce the smalles
 ## Source and Ownership
 
 Identify whether each instruction is project-owned, user-owned, generated, or provider-supplied, and preserve that boundary in both wording and file edits.
-
-For skills, the description determines when the skill activates. Include only the user-visible tasks, contextual cues, and necessary scope boundaries needed to make that decision.
 
 For automations, future-run behavior belongs in the automation prompt. Apply user feedback that should affect future runs to that prompt, and reserve automation memory for run history and changing context.
 
@@ -51,6 +53,8 @@ When a prompt embeds expected input, place that input at the top or bottom inste
 ## Inference and Constraint Check
 
 Assume the target agent can reason from the request, surrounding instructions, environment, tools, and authoritative sources. Delete anything it can reliably infer or retrieve without changing correctness or explicit user expectations. Commands, variables, paths, mutable facts, routine investigation or safety steps, standard reporting behavior, and restatements of higher-priority guidance usually fail this test. Keep a specific procedure only when the user wants it as ongoing behavior or evidence shows that outcome-oriented guidance is insufficient.
+
+Before encoding a correction as lasting prose, classify it as one-off, mechanically enforceable, or judgment-dependent. Leave one-offs local. When a recurring mechanical failure can be prevented by a low-maintenance code, test, or tool change, recommend that owner instead. Reserve instructions for recurring decisions that require judgment.
 
 For every sentence and every clause that combines requirements, ask what concrete failure would become materially more likely without it. Delete it when there is no specific answer. Truth, low cost, or protection against a hypothetical mistake is not enough. Before adding wording from a chat to lasting instructions, read it from the perspective of a future agent that sees only the final artifact. Remove migration notes, edit rationale, or comparisons that depend on the current conversation.
 

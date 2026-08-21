@@ -44,8 +44,4 @@ Before treating a Site as done, verify that it is reachable in Chrome. If a priv
 
 ## Skill Selection
 
-When creating or revising a skill, use `skill-creator` for its structure and validation and `write-agent-instructions` for its agent-facing instruction content. When creating or revising a skill description, include only information needed to determine whether the skill should activate. Keep execution guidance in the skill body.
-
-When planning with `questline`, also use `explain-clearly` for the user-facing dialogue.
-
-When a task creates or changes automated tests, use both `write-code` and `design-tests`, including during `questline` implementation.
+Consider every matching skill before proceeding. When several can materially improve the task, compose them and apply each within its scope. For example, when creating or revising a skill, use `$skill-creator` for structure and validation and `$write-agent-instructions` for agent-facing instruction content.

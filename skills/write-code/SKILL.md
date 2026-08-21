@@ -41,10 +41,10 @@ Treat ~20 lines of logic as a review signal, not a threshold: shorter methods ma
 ## PHP
 
 - Do not declare a PHP class `final` unless it was already `final` before the edit.
-- Inline single-use locals when the resulting expression remains clear.
+- Use `readonly` only where preventing reassignment is a design requirement.
 - Call global PHP functions directly; do not import them with `use function`.
+- Inline single-use locals when the resulting expression remains clear.
 - Use docblocks only when they add information native PHP declarations cannot express.
-- Treat acronyms as words (`HttpClient`, not `HTTPClient`). When comparable identifiers in the relevant source code consistently use another casing, follow that local convention.
-- Use `readonly` only where preventing reassignment is a design requirement; when that requirement applies to every property of a DTO, prefer a `readonly` class.
-- Add type declarations to project-owned or package-owned code wherever compatible with PHP and framework contracts and conventions.
+- Add type declarations wherever compatible with PHP and framework contracts and conventions.
+- Treat acronyms as words (`HttpClient`, not `HTTPClient`) unless relevant comparable identifiers consistently use different casing.
 - Prefer string interpolation to `sprintf()` and concatenation. Omit braces around interpolated variables unless required.
