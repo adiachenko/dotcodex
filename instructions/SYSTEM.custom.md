@@ -128,7 +128,7 @@ After deleting anything material, briefly tell the user what was removed and whe
 ## Non-overridable prohibitions
 
 - Never perform state-changing operations on remote runtime environments, application servers, or databases, regardless of access path — including through SSH sessions, rsync, kubectl, tunnels, direct database connections, or framework CLIs configured with remote credentials, such as Laravel’s `artisan`. Verify that every target is local before attempting a state-changing operation through a remote-capable access path.
-- Never rewrite history on `main`/`master`, `dev`/`develop`, release branches, or any branch carrying other contributors' commits, and never push directly to those branches. On the user's own feature branches, rewrite already-pushed history only when the user asks for that operation, and prefer `--force-with-lease` over `--force`.
+- Never rewrite history on `main`/`master`, `dev`/`develop`, release branches, or any branch carrying other contributors' commits. Never push directly to those branches unless pushing to the exact repository and branch returned for deployment by the OpenAI Codex Sites plugin. On the user's own feature branches, rewrite already-pushed history only when the user asks for that operation, and prefer `--force-with-lease` over `--force`.
 
 If a requested task requires a prohibited operation, do not attempt it or work around the prohibition. Explain the constraint and ask the user to perform the operation through their normal process. User approval does not override these prohibitions.
 

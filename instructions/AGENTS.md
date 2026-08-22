@@ -38,10 +38,6 @@ When creating a branch, writing a commit, or creating, updating, or merging a pu
 
 Authorization to create a branch or publish Git changes is scoped to the user request in which it was given. Do not carry either authorization into later requests.
 
-## Codex Sites
-
-Before treating a Site as done, verify that it is reachable in Chrome. If a private Site is not, give the user its Sign in with ChatGPT link.
-
 ## Skill Selection
 
 Consider every matching skill before proceeding. When several can materially improve the task, compose them and apply each within its scope. For example, when creating or revising a skill, use `$skill-creator` for structure and validation and `$write-agent-instructions` for agent-facing instruction content.
