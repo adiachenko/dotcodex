@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/header.png" alt="dotcodex header illustration of a faceted alien machine core unfolding around a blue-white spark" width="280">
-</p>
-
 <h1 align="center">dotcodex</h1>
 
 <p align="center">
