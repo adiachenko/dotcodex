@@ -34,9 +34,11 @@ Within a delegated thread, instructions the user gives directly in that thread t
 
 ## Git Preferences
 
+Never use Git worktrees. Use the existing checkout for the current Codex project.
+
 When creating a branch, writing a commit, or creating, updating, or merging a pull request, follow the current `git-branch-prefix`, `git-pull-request-merge-method`, `git-create-pull-request-as-draft`, `git-commit-instructions`, and `git-pr-instructions` values under `[desktop]` in `~/.codex/config.toml`. These settings override other Git conventions and defaults unless applicable project guidance or an explicit user request specifies otherwise. An empty `git-branch-prefix` value means use the branch name without a prefix. Descriptions of a branch’s purpose do not prescribe its name; for example, “feature branch” does not imply a `feature/` prefix.
 
-Authorization to create a branch or publish Git changes is scoped to the user request in which it was given. Do not carry either authorization into later requests.
+Do not create a branch, commit changes, or push changes unless the user's intent to do so is clear in the current request. Do not carry authorization for any of these actions into later requests.
 
 ## Skill Selection
 

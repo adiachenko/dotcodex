@@ -1,5 +1,5 @@
-model = "gpt-5.6-sol"
-model_reasoning_effort = "xhigh"
+model = "gpt-6-astra"
+model_reasoning_effort = "high"
 model_instructions_file = "~/.codex/SYSTEM.custom.md"
 model_verbosity = "medium"
 model_context_window = 372000
@@ -18,10 +18,7 @@ commit_attribution = ""
 network_access = true
 
 [agents]
-default_subagent_model = "gpt-5.6-sol"
-default_subagent_reasoning_effort = "high"
-max_threads = 10
-max_depth = 1
+max_concurrent_threads_per_session = 10
 
 [desktop]
 ambient-suggestions-enabled = false
