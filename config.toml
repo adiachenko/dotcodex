@@ -1,5 +1,5 @@
 model = "gpt-6-astra"
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 model_instructions_file = "~/.codex/SYSTEM.custom.md"
 model_verbosity = "medium"
 model_context_window = 372000
@@ -16,6 +16,9 @@ commit_attribution = ""
 
 [sandbox_workspace_write]
 network_access = true
+
+[features.context_management]
+experimental_mode = true
 
 [agents]
 max_concurrent_threads_per_session = 10
