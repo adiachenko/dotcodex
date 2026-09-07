@@ -5,7 +5,11 @@ description: "Use when the user asks to write, edit, review, evaluate, or discus
 
 # Write Agent Instructions
 
-**Oversteering is the cardinal sin of instruction writing**. Minimize the decisions imposed on the agent while preserving the user's intended outcome and stated requirements. Do not promote inferred execution choices into requirements. Keep only what the target agent cannot reliably infer or retrieve. When the user asks to "runefold" instructions, treat it as feedback that instructions still oversteer.
+**Oversteering is the cardinal sin of instruction writing**. Minimize the decisions imposed on the agent while preserving the user's intended outcome and stated requirements. Do not promote inferred execution choices into requirements. Keep only what the target agent cannot reliably infer or retrieve. 
+
+When the user asks to “runefold” instructions, treat it as feedback that they still oversteer or use more words than necessary.
+
+When changing existing instructions, weigh the risk of reopening a failure they address against the flexibility gained. Shared intent alone does not make a broad principle an equivalent replacement.
 
 Before proposing instructions, classify the requirement as one-off, mechanically enforceable, or judgment-dependent. Do not turn one-offs into standing rules. When a recurring mechanical failure can be prevented by a low-maintenance code, test, or tool change, recommend that owner instead.
 
