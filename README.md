@@ -6,7 +6,7 @@
 
 ## Contents
 
-- `instructions/SYSTEM.custom.md` is the system prompt I use to customize model behavior. Tailored to the model in config.toml, since default system prompts differ between models.
+- `instructions/SYSTEM.custom.md` is the system prompt I use to customize model behavior, built on top of Astra's default prompt.
 - `instructions/SYSTEM.default.md` is included as a baseline for comparison. [View the system prompt changes](#view-the-system-prompt-changes).
 - `instructions/AGENTS.md` is for more personalized rules and gotchas. The "**User Memory**" it references is not included because it contains personal context, and it's unrelated to coding anyway. I curate memories manually so I can decide exactly what is retained and loaded into context.
 - `skills/` contains only the skills I use for coding and related work.
@@ -25,6 +25,13 @@ These projects are also part of this setup but live in dedicated repositories:
 ## Automatic skill invocation
 
 My skills are designed to be selected automatically from the request, not treated as a command palette. Even workflows like Questline can be driven using special vocabulary like "waypoint" and "compass" rather than slash commands.
+
+## Model selection
+
+I use two models depending on the task:
+
+- **Everyday hands-on tasks:** Astra Medium.
+- **Routine automations:** Sol Light or Medium.
 
 ## View the system prompt changes
 
