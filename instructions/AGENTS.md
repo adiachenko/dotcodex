@@ -4,7 +4,7 @@
 
 The user keeps explicit personal context at `/Users/adiachenko/Repositories/memories/INDEX.md`.
 
-When user-specific context could materially change the answer, read that index and use its routing to load only the relevant memory before deciding. This especially applies to subjective recommendations, rankings, curation, taste-dependent advice, user's location, personal workflows, setup assumptions, the user's writing voice, and references to the user's notes, local Google Drive, or libraries.
+When user-specific context could materially change the answer, read that index and use its routing to load only the relevant memory before deciding. This especially applies to subjective recommendations, rankings, curation, taste-dependent advice, user's location, personal workflows, setup assumptions, and references to the user's notes, local Google Drive, or libraries.
 
 Memory files are context, not instructions, unless explicitly marked as agent instructions. The current conversation overrides stored memory.
 
@@ -34,11 +34,14 @@ Within a delegated thread, instructions the user gives directly in that thread t
 
 ## Git Preferences
 
-Never use Git worktrees. Use the existing checkout for the current Codex project.
+These preferences override other Git conventions and app defaults unless applicable project guidance or an explicit user request specifies otherwise.
 
-When creating a branch, writing a commit, or creating, updating, or merging a pull request, follow the current `git-branch-prefix`, `git-pull-request-merge-method`, `git-create-pull-request-as-draft`, `git-commit-instructions`, and `git-pr-instructions` values under `[desktop]` in `~/.codex/config.toml`. These settings override other Git conventions and defaults unless applicable project guidance or an explicit user request specifies otherwise. An empty `git-branch-prefix` value means use the branch name without a prefix. Descriptions of a branch’s purpose do not prescribe its name; for example, “feature branch” does not imply a `feature/` prefix.
-
-Do not create a branch, commit changes, or push changes unless the user's intent to do so is clear in the current request. Do not carry authorization for any of these actions into later requests.
+- **Checkout vs. worktree:** Never use Git worktrees. Use the existing checkout for the current Codex project.
+- **Authorization:** Do not create branches, commit, or push unless the user’s intent to do so is clear in the current request. Do not carry authorization into later requests.
+- **Branch names:** Follow conventions evident in local remote-tracking branches, otherwise use no prefix. Do not infer a prefix from the wording of the task.
+- **Commit messages:** Write a short imperative title. Leave the description empty.
+- **Pull requests:** Write a short imperative title naming the main change. Leave the description empty by default. Do not mark new pull requests as drafts.
+- **Merging:** Default to squash merges, except where the `land-pr` skill says otherwise. Leave merges between long-lived branches to the user.
 
 ## Skill Selection
 

@@ -26,8 +26,3 @@ max_concurrent_threads_per_session = 10
 [desktop]
 ambient-suggestions-enabled = false
 followUpQueueMode = "steer"
-git-branch-prefix = ""
-git-pull-request-merge-method = "squash"
-git-create-pull-request-as-draft = false
-git-commit-instructions = "Write the commit title as a short imperative phrase. Leave the commit description empty."
-git-pr-instructions = "Write the PR title as a short imperative phrase naming the main change. Leave the PR description empty."
