@@ -15,6 +15,8 @@ Make one part of the code responsible for ensuring each guarantee is true. Check
 
 Apply the same restraint to structure: keep a class, interface, or layer of indirection only when it is needed to preserve supported behavior, isolates an actual boundary, satisfies a required property, or makes the implementation clearer than the direct alternative.
 
+If several parts of the code must change only to pass information along, look for a design that leaves fewer parts involved.
+
 **Before finalizing, remove defensive code** that neither performs the initial validation of untrusted input nor implements required behavior, together with tests that exist only for that code.
 
 ## Unweave
