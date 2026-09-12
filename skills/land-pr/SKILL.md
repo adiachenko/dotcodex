@@ -18,20 +18,18 @@ Merge only after checks pass and completion is confirmed. If those checks or rev
 Follow project branching guidance. Otherwise:
 
 - **Features and hotfixes with one target:** squash merge.
-- **Hotfixes with multiple targets among `main`, `develop`, and release branches:** merge the same hotfix branch into each target through separate PRs using merge commits.
+- **Hotfixes with multiple targets among `main`/`master`, `dev`/`develop`, and release branches:** merge the same hotfix branch into each target through separate PRs using merge commits.
 - **Long-lived version branches:** use squash PRs for every target instead. Land shared fixes in `main` first, then cherry-pick them onto separate branches based on each affected supported version. Preserve version-specific differences without introducing unrelated divergence. If a change lands on a version branch first, carry it into `main` and other affected version branches through separate PRs.
 - **User requests preserving individual commits:** use merge commits.
 
-For hotfixes, refresh remote branch information and determine all required targets before the first merge: `main` (or `master`), `develop`, the active release branch, and supported version branches.
+For hotfixes, refresh remote branch information and determine all required targets before the first merge: `main`/`master`, `dev`/`develop`, the active release branch, and supported version branches.
 
-Always create an explicit merge commit when that strategy applies. Never rebase.
+Always create an explicit merge commit when that strategy applies (`--no-ff`). Never rebase.
 
 ## Completion
 
 Complete the applicable merge sequence through PRs, applying the same readiness checks to each. Update each local target branch with `--ff-only` and finish on the final target branch.
 
 Delete merged feature and hotfix branches locally and remotely after all intended PRs have landed and after checking for commits added after the merge. For squash merges, verify against the merged PR head.
-
-Leave release-branch cleanup to the user.
 
 Report the result and anything left unfinished.
