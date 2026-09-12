@@ -17,6 +17,8 @@ Before proposing instructions, classify the requirement as one-off, mechanically
 
 For skills, treat `description` as a badly named field: it is a routing predicate wearing a prose label. Its only job is to answer, "Should this skill load for this request?" Write it as `Use when ...` and include only the user requests, vocabulary, contextual conditions, and scope boundaries needed to answer that question. If a clause explains what the skill does after it loads, that clause belongs in the skill body. Configure `allow_implicit_invocation` for explicit-only skills and keep explicit invocation syntax out of descriptions.
 
+For the user's personal Codex skills, keep `agents/openai.yaml` only for requested interface metadata, non-default invocation policy, or tool dependencies. Omit default settings. Disable implicit invocation only at the user's explicit request, never because a workflow requires authorization.
+
 ## Source and Ownership
 
 - Identify whether each instruction is project-owned, user-owned, generated from other sources, or provider-supplied, and preserve that boundary in both wording and file edits. Keep project instructions usable without a particular agent’s installed skills or file layout.
